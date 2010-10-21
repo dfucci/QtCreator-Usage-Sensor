@@ -1,14 +1,13 @@
 TEMPLATE = lib
-QT += xml
 TARGET = XMLLogger
-
-
-#DESTDIR = "$$IDE_BUILD_TREE/bin/Qt Creator.app/Contents/PlugIns/$$PROVIDER"
-#include($$IDE_SOURCE_TREE/src/plugins/coreplugin/coreplugin.pri)
-#LIBS += -L"$$IDE_BUILD_TREE/bin/Qt Creator.app/Contents/PlugIns/Nokia"
+#CONFIG +=staticlib
+CONFIG += debug_and_release
+CONFIG += precompile_header
 include(../../qtcreatorplugin.pri)
 include(../../plugins/coreplugin/coreplugin.pri)
 HEADERS += xmlloggerplugin.h \
-    UserRoles.h
-SOURCES += xmlloggerplugin.cpp
+    UserRoles.h \
+    xmlevent.h
+SOURCES += xmlloggerplugin.cpp \
+    xmlevent.cpp
 OTHER_FILES += XMLLogger.pluginspec

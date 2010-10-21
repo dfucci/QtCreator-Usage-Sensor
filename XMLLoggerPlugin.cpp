@@ -29,20 +29,25 @@ void XMLLoggerPlugin::shutdown()
 // Do nothin
 }
 
-void XMLLoggerPlugin::registerXML(int id,QString type, QString filename){
-    this->_name=XMLLoggerPlugin::lookupName(id);
-    this->_type=type;
-    this->_filename=filename;
-    this->_timestamp=QString::number(QDateTime::currentMSecsSinceEpoch());
-    XMLLoggerPlugin::write(this->_name, this->_type, this->_filename, this->_timestamp);
-}
-void XMLLoggerPlugin::registerXML(QString name, QString type, QString filename){
-    this->_name=name;
-    this->_type=type;
-    this->_filename=filename;
-    this->_timestamp==QString::number(QDateTime::currentMSecsSinceEpoch());
-    XMLLoggerPlugin::write(this->_name, this->_type, this->_filename, this->_timestamp);
-}
+//static void XMLLoggerPlugin::registerXML(int id,QString filename, QString type){
+//    this->_name=XMLLoggerPlugin::lookupName(id);
+//    this->_type=type;
+//    this->_filename=filename;
+//    this->_timestamp=QString::number(QDateTime::currentMSecsSinceEpoch());
+//    XMLLoggerPlugin::write(this->_name, this->_type, this->_filename, this->_timestamp);
+//}
+//void XMLLoggerPlugin::registerXML(QString name, QString filename, QString type){
+//   // _name=name;
+//   // _type=type;
+//   // _filename=filename;
+//    // _timestamp=QString::number(QDateTime::currentMSecsSinceEpoch());
+//    XMLEvent xev;
+//    xev.setFilename(filename);
+//    xev.setName(name);
+//    xev.setType(type);
+//    xev.setTimestamp();
+//    xev.write();
+//}
 void XMLLoggerPlugin::write(QString name, QString type, QString filename, QString timestamp){
     QFile file("QtCreatorLog.xml");
       if (!file.open(QIODevice::Append))
