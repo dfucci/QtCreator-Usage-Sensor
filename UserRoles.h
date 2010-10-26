@@ -1,7 +1,7 @@
 #ifndef USERROLES_H
 #define USERROLES_H
 #include <Qt>
-enum {
+enum CppEditor{
     open=Qt::UserRole+1,
     findFunctionDefinition,
     switchDeclarationDefinition,
@@ -14,9 +14,9 @@ enum {
     performQuickFix,
     indentBlock,
     findLinkAt
-} CppEditor;
+} ;
 
-enum {
+enum BaseEditor{
     cutLine=Qt::UserRole+20,
     deleteLine,
     moveLineUp,
@@ -25,16 +25,16 @@ enum {
     copyLineDown,
     focusInEvent,
     focusOutEvent
-} BaseEditor2;
+} ;
 
-enum {
+enum Debugger{
     startDebugger = Qt::UserRole+40,
     stopDebugger,
     isError
-} Debugger;
+} ;
 
-enum {
+enum ProjectExplorer {
     start = Qt::UserRole+50,
     stop
-} ProjectExplorer;
+} ;
 #endif // USERROLES_H
